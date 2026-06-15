@@ -12,9 +12,18 @@ from datetime import datetime
 app =FastAPI()
 import time
 
+import time
+
 @app.on_event("startup")
 def startup():
-    create_db_and_tables()
+    for _ in range(10):
+        try:
+            create_db_and_tables()
+            print("Database connected")
+            break
+        except Exception as e:
+            print("Waiting for database...", e)
+            time.sleep(2)
 app.add_exception_handler(
     Exception,global_exception_handler)
 

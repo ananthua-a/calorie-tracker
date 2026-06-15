@@ -6,7 +6,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: process.env.API_TARGET || 'http://localhost:8000',
+        target: process.env.API_TARGET || 'http://backend:8000',
         changeOrigin: true,
         // frontend code calls `/api/...`; backend routes are `/<...>`.
         // rewrite `/api/*` -> `/*`.
