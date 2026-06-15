@@ -151,18 +151,6 @@ GET /daily-macros
 docker compose up
 ```
 
-Backend:
-
-```text
-http://localhost:8000/docs
-```
-
-Frontend:
-
-```text
-http://localhost:5173
-```
-
 ---
 
 ## Project Structure
